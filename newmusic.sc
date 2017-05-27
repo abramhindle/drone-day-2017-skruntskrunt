@@ -689,10 +689,8 @@ MIDIIn.connectAll;
 },nil,0);
 
 ~off = MIDIFunc.noteOff({ |veloc, num, chan, src|
-	if(chan==0,{
-		~notes[num].release(5);
-		~notes[num] = nil;
-	});
+	~notes[num].release(5);
+	~notes[num] = nil;
 },nil,0);
 
 // ~notes.do {|x| x.free; }
