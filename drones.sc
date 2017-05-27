@@ -90,21 +90,19 @@ MIDIIn.connectAll;
 
 ~on = MIDIFunc.noteOn({ |veloc, num, chan, src|
 	[veloc,num,chan,src].postln;
-	if(chan==0,{
 		if(nil!=~notes[num],{
-			~notes[num].release;
+			~notes[num].release(5);
 		});
 		~notes[num] = Synth(\drone, 
 			[\out,0, \freq,num.midicps,\gate,0.5,\amp,0.5 * veloc * 0.00315,\attack,0.04,\release,5.0])
-	})
-});
+},nil,0);
 
 ~off = MIDIFunc.noteOff({ |veloc, num, chan, src|
 	if(chan==0,{
-		~notes[num].release;
+		~notes[num].release(5);
 		~notes[num] = nil;
 	});
-});
+},nil,0);
 
 // ~notes.do {|x| x.free; }
 
