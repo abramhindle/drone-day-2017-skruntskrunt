@@ -1,4 +1,12 @@
-# drones-in-g
+# drones-day-2017
+
+newmusic.sc is the program. Evaluate the whole thing and control via midi with a keyboard or seq24.
+
+channel 0/1 is harmonic drone
+channel 1/2 is sound of elements
+
+Key of G Droning
+================
 
 Supercollider is pretty good at droning.
 
